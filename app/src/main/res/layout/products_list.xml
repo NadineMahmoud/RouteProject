@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductsList"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/route"
+        android:textSize="25sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="what do you search for?"
+        android:background="@drawable/search_box"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:padding="10dp"
+        android:drawableStart="@drawable/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/product1_card"
+        app:layout_constraintTop_toBottomOf="@id/route"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cart"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product1_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        android:background="@drawable/card_design"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_design"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/productone"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike Air Jordan"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike shoes flexible for wo.."
+                android:textSize="14sp"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/text"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EGP 1,200 "
+                android:textColor="@color/text"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2000 EGP"
+                android:textColor="@color/text"
+                android:textSize="11sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-condensed"/>  </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/navy_blue"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:text="Review (4.6)"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/star"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:layout_gravity="right"
+                android:layout_marginStart="50dp"/>
+        </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product2_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="2dp"
+        app:layout_constraintStart_toEndOf="@id/product1_card"
+        android:background="@drawable/card_design"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_design"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/producttwo"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike Air Jordan"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike shoes flexible for wo.."
+                android:textSize="14sp"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/text"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EGP 1,200 "
+                    android:textColor="@color/text"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2000 EGP"
+                    android:textColor="@color/text"
+                    android:textSize="11sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed"/>  </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Review (4.6)"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/star"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="50dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
