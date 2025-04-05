@@ -8,6 +8,39 @@
     tools:context=".ProductsList"
     android:background="@color/white">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="366dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.97" />
+
+
     <ImageView
         android:id="@+id/route"
         android:layout_width="wrap_content"
@@ -44,30 +77,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/search" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/product1_card"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintWidth_percent="0.45"
         app:cardCornerRadius="20dp"
         app:cardElevation="2dp"
         android:background="@drawable/card_design"
         app:layout_constraintTop_toBottomOf="@id/search"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical1"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical2"
+        app:layout_constraintBottom_toTopOf="@id/guideline1_horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@drawable/card_design"
             android:paddingBottom="10dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/productone"
-                android:scaleType="centerCrop" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/productone" />
 
             <TextView
                 android:id="@+id/text1"
@@ -112,8 +146,8 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="sans-serif-condensed"/>  </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -146,29 +180,27 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/product2_card"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         app:cardCornerRadius="20dp"
-        android:layout_marginEnd="20dp"
         app:cardElevation="2dp"
-        app:layout_constraintStart_toEndOf="@id/product1_card"
         android:background="@drawable/card_design"
+        app:layout_constraintBottom_toTopOf="@id/guideline1_horizontal"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical2"
         app:layout_constraintTop_toBottomOf="@id/search"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="@id/guideline3_vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@drawable/card_design"
             android:paddingBottom="10dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/producttwo"
-                android:scaleType="centerCrop" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/producttwo" />
 
             <TextView
                 android:id="@+id/text2"
@@ -197,7 +229,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 1,200 "
+                    android:text="EGP 1,100 "
                     android:textColor="@color/text"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"
@@ -206,7 +238,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2000 EGP"
+                    android:text="1500 EGP"
                     android:textColor="@color/text"
                     android:textSize="11sp"
                     android:layout_marginStart="10dp"
@@ -225,7 +257,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="Review (4.6)"/>
+                    android:text="Review (4.5)"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -243,6 +275,212 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product3_card"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.45"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        android:background="@drawable/card_design"
+        app:layout_constraintTop_toBottomOf="@id/guideline1_horizontal"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/card_design"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/productthree" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike Air Jordan"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike shoes flexible for wo.."
+                android:textSize="14sp"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/text"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EGP 1000 "
+                    android:textColor="@color/text"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1300 EGP"
+                    android:textColor="@color/text"
+                    android:textSize="11sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Review (4.5)"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/star"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="50dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/product4_card"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.45"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical2"
+            android:background="@drawable/card_design"
+            app:layout_constraintEnd_toStartOf="@id/guideline3_vertical"
+            app:layout_constraintTop_toBottomOf="@id/guideline1_horizontal"
+            app:layout_constraintBottom_toTopOf="@id/guideline2_horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/card_design"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/produtfour" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nike Air Jordan"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@color/text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nike shoes flexible for wo.."
+                    android:textSize="14sp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/text"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EGP 1000 "
+                        android:textColor="@color/text"
+                        android:textSize="12sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="sans-serif-condensed-medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1500 EGP"
+                        android:textColor="@color/text"
+                        android:textSize="11sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="sans-serif-condensed"/>  </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Review (4.5)"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/star"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/add"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white"
+                        android:layout_gravity="right"
+                        android:layout_marginStart="50dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
 

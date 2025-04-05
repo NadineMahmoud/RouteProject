@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RouteGraduationProject"
         tools:targetApi="31">
         <activity
+            android:name=".ProductOneActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductsList"
             android:exported="true">
             <intent-filter>
