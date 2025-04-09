@@ -11,10 +11,10 @@
     <!-- Back Button -->
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="14dp"
-        android:layout_height="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="9dp"
+        android:layout_height="6dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
         android:background="@color/white"
         android:contentDescription="Back"
         android:src="@drawable/backbtn"
@@ -29,12 +29,12 @@
         android:text="Product Details"
         android:fontFamily="sans-serif-medium"
         android:textSize="20sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/text"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/back"
         app:layout_constraintEnd_toStartOf="@id/search"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="60dp" />
 
     <!-- Search Button -->
     <ImageButton
@@ -46,7 +46,7 @@
         android:contentDescription="Search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/cart"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp" />
 
     <!-- Cart Button -->
@@ -59,22 +59,347 @@
         android:contentDescription="Cart"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin="16dp"
+        android:layout_height="300dp"
         android:clipToPadding="false"
         android:clipChildren="false"
-        android:paddingEnd="40dp"
-        android:paddingStart="40dp"
+        android:layout_margin="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="0dp"
         android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/title_tx"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/title_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+        android:text="Nike Air Jordon"
+        app:layout_constraintBottom_toTopOf="@id/sold"
+        app:layout_constraintTop_toBottomOf="@id/viewPager"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:text="EGP 3,500"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/card_plus_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPager"/>
+
+        <TextView
+            android:id="@+id/sold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3,230 Sold"
+            android:textColor="@color/text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintTop_toBottomOf="@id/title_tx"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:textSize="14sp"
+        android:textColor="@color/text"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/sold"
+        app:layout_constraintEnd_toEndOf="@id/title_tx"
+        app:layout_constraintTop_toBottomOf="@id/title_tx"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/text"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:text="4.8 (7,500)"
+        app:layout_constraintStart_toEndOf="@id/star"
+        app:layout_constraintTop_toBottomOf="@id/title_tx"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_plus_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:elevation="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toEndOf="@id/points"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/navy_blue">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- زرار ناقص -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Plus"
+                app:backgroundTint="@color/navy_blue"
+                app:icon="@drawable/minus"
+                app:iconTint="@color/white"/>
+
+            <!-- العداد -->
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Plus"
+                app:backgroundTint="@color/navy_blue"
+                app:icon="@drawable/plus"
+                app:iconTint="@color/white"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/text"
+        app:layout_constraintTop_toBottomOf="@id/sold"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/description_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="Nike is a multinational corporation that designs,
+               develops, and sells athletic footwear ,apparel, and accessories......Read More "
+        android:textColor="#9906004F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textColor="@color/text"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/description_tx"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+        <LinearLayout
+            android:id="@+id/sizes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/size"
+            app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/size_38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="38"
+            android:textSize="16sp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@drawable/text_color_selected"
+            android:textStyle="bold"
+            android:background="@drawable/button_selected_design"
+            android:padding="10dp"
+            android:clickable="true"
+            android:focusable="true"/>
+            <TextView
+                android:id="@+id/size_39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="39"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@drawable/text_color_selected"
+                android:textStyle="bold"
+                android:background="@drawable/button_selected_design"
+                android:padding="10dp"/>
+            <TextView
+                android:id="@+id/size_40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@drawable/text_color_selected"
+                android:textStyle="bold"
+                android:background="@drawable/button_selected_design"
+                android:padding="10dp"/>
+            <TextView
+                android:id="@+id/size_41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="41"
+                android:textSize="16sp"
+                android:textColor="@drawable/text_color_selected"
+                android:textStyle="bold"
+                android:background="@drawable/button_selected_design"
+                android:padding="10dp"/>
+            <TextView
+                android:id="@+id/size_42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="42"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@drawable/text_color_selected"
+                android:textStyle="bold"
+                android:background="@drawable/button_selected_design"
+                android:padding="10dp"/>
+        </LinearLayout>
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/text"
+        app:layout_constraintTop_toBottomOf="@id/sizes"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <LinearLayout
+        android:id="@+id/colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/color"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/black" />
+        <ImageView
+            android:id="@+id/red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/red" />
+
+        <ImageView
+            android:id="@+id/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blue" />
+
+        <ImageView
+            android:id="@+id/green"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/green" />
+        <ImageView
+            android:id="@+id/light_red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/light_red" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total price"
+        android:textColor="#9906004F"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/colors"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EGP 3,500"
+        android:textColor="#9906004F"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/total"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_cart"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:icon="@drawable/cart_two"
+        app:iconPadding="12dp"
+        app:iconGravity="textStart"
+        app:cornerRadius="50dp"
+        app:backgroundTint="@color/navy_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/colors"
+        android:layout_marginEnd="20dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
