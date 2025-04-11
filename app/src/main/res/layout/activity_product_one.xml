@@ -16,7 +16,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginStart="20dp"
         android:background="@color/white"
-        android:contentDescription="Back"
+        android:contentDescription="@string/back"
         android:src="@drawable/backbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
         android:id="@+id/text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Product Details"
+        android:text="@string/product_details"
         android:fontFamily="sans-serif-medium"
         android:textSize="20sp"
         android:textColor="@color/text"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/search"
         android:background="@color/white"
-        android:contentDescription="Search"
+        android:contentDescription="@string/search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/cart"
         android:layout_marginTop="60dp"
@@ -54,14 +54,14 @@
     <!-- Cart Button -->
     <ImageButton
         android:id="@+id/cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:src="@drawable/cart"
         android:background="@color/white"
-        android:contentDescription="Cart"
+        android:contentDescription="@string/cart"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp" />
 
     <androidx.viewpager2.widget.ViewPager2
@@ -73,7 +73,6 @@
         android:layout_margin="25dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:paddingStart="0dp"
         android:overScrollMode="never"
         app:layout_constraintBottom_toTopOf="@id/title_tx"
         app:layout_constraintTop_toBottomOf="@id/text"
@@ -88,7 +87,7 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:textColor="@color/text"
-        android:text="Nike Air Jordon"
+        android:text="@string/Nike_air_jordan"
         app:layout_constraintBottom_toTopOf="@id/sold"
         app:layout_constraintTop_toBottomOf="@id/viewPager"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -100,7 +99,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
         android:textSize="20sp"
-        android:text="EGP 1,000"
+        android:text="@string/egp_1_000"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/card_plus_minus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +109,7 @@
             android:id="@+id/sold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3,230 Sold"
+            android:text="@string/_3_230_sold"
             android:textColor="@color/text"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -124,6 +123,7 @@
         android:id="@+id/star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/star"
         android:src="@drawable/star"
         android:textSize="14sp"
         android:textColor="@color/text"
@@ -141,7 +141,7 @@
         android:textColor="@color/text"
         android:layout_marginStart="10dp"
         android:layout_marginTop="27dp"
-        android:text="4.8 (7,500)"
+        android:text="@string/_4_8_7_500"
         app:layout_constraintStart_toEndOf="@id/star"
         app:layout_constraintTop_toBottomOf="@id/title_tx"/>
     <androidx.cardview.widget.CardView
@@ -163,23 +163,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- زرار ناقص -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_minus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:contentDescription="Plus"
+                android:contentDescription="@string/plus"
                 android:layout_weight="1"
                 app:backgroundTint="@color/navy_blue"
                 app:icon="@drawable/minus"
                 app:iconTint="@color/white"/>
 
-            <!-- العداد -->
             <TextView
                 android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="@string/_1"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -189,7 +187,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="Plus"
+                android:contentDescription="@string/plus"
                 app:backgroundTint="@color/navy_blue"
                 app:icon="@drawable/plus"
                 app:iconGravity="end"
@@ -203,7 +201,7 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description"
+        android:text="@string/description"
         android:textColor="@color/text"
         app:layout_constraintTop_toBottomOf="@id/sold"
         app:layout_constraintStart_toStartOf="parent"
@@ -218,8 +216,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:text="Nike is a multinational corporation that designs,
-               develops, and sells athletic footwear ,apparel, and accessories......Read More "
+        android:text="@string/nike_is_a_multinational_corporation_that_designs_develops_and_sells_athletic_footwear_apparel_and_accessories_read_more"
         android:textColor="#9906004F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description"
@@ -230,7 +227,7 @@
         android:id="@+id/size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Size"
+        android:text="@string/size"
         android:textColor="@color/text"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
@@ -252,7 +249,7 @@
             android:id="@+id/size_38"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="38"
+            android:text="@string/_38"
             android:textSize="16sp"
             android:layout_marginEnd="10dp"
             android:textColor="@drawable/text_color_selected"
@@ -265,7 +262,7 @@
                 android:id="@+id/size_39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="39"
+                android:text="@string/_39"
                 android:textSize="16sp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@drawable/text_color_selected"
@@ -276,7 +273,7 @@
                 android:id="@+id/size_40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="40"
+                android:text="@string/_40"
                 android:textSize="16sp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@drawable/text_color_selected"
@@ -288,7 +285,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:text="41"
+                android:text="@string/_41"
                 android:textSize="16sp"
                 android:textColor="@drawable/text_color_selected"
                 android:textStyle="bold"
@@ -298,7 +295,7 @@
                 android:id="@+id/size_42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="42"
+                android:text="@string/_42"
                 android:textSize="16sp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@drawable/text_color_selected"
@@ -310,7 +307,7 @@
         android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color"
+        android:text="@string/color"
         android:textSize="20sp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
@@ -333,6 +330,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:contentDescription="@string/black"
             android:scaleType="centerCrop"
             android:src="@drawable/black" />
         <ImageView
@@ -340,6 +338,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:contentDescription="@string/red"
             android:scaleType="centerCrop"
             android:src="@drawable/red" />
 
@@ -348,6 +347,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:contentDescription="@string/blue"
             android:scaleType="centerCrop"
             android:src="@drawable/blue" />
 
@@ -356,6 +356,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:contentDescription="@string/green"
             android:scaleType="centerCrop"
             android:src="@drawable/green" />
         <ImageView
@@ -363,6 +364,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp"
+            android:contentDescription="@string/light"
             android:scaleType="centerCrop"
             android:src="@drawable/light_red" />
     </LinearLayout>
@@ -370,7 +372,7 @@
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total price"
+        android:text="@string/total_price"
         android:textColor="#9906004F"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -381,7 +383,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EGP 3,500"
+        android:text="@string/egp_3_500"
         android:textColor="#9906004F"
         android:textStyle="bold"
         android:textSize="19sp"
