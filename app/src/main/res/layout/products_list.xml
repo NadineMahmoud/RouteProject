@@ -45,33 +45,40 @@
         android:id="@+id/route"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/route"
         android:src="@drawable/route"
         android:textSize="25sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search"/>
 
     <EditText
         android:id="@+id/search"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="what do you search for?"
+        android:autofillHints="search"
+        android:hint="@string/what_do_you_search_for"
         android:background="@drawable/search_box"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
         android:padding="10dp"
+        android:textColorHint="#99004182"
         android:drawableStart="@drawable/search"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cart"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical1"
         app:layout_constraintBottom_toTopOf="@id/product1_card"
         app:layout_constraintTop_toBottomOf="@id/route"/>
 
     <ImageButton
+        android:id="@+id/cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/cart"
         android:src="@drawable/cart"
         android:background="@color/white"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@id/search"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,13 +109,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/one"
                 android:src="@drawable/productone" />
 
             <TextView
                 android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike Air Jordan"
+                android:text="@string/nike_air_jordan"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"
@@ -118,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike shoes flexible for wo.."
+                android:text="@string/nike_shoes_flexible_for_wo"
                 android:textSize="14sp"
                 android:layout_marginTop="1dp"
                 android:layout_marginStart="10dp"
@@ -131,7 +139,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EGP 1,200 "
+                android:text="@string/egp_1_200"
                 android:textColor="@color/text"
                 android:textSize="12sp"
                 android:layout_marginStart="10dp"
@@ -140,7 +148,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2000 EGP"
+                android:text="@string/_2000_egp"
                 android:textColor="@color/text"
                 android:textSize="11sp"
                 android:layout_marginStart="10dp"
@@ -159,7 +167,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="10dp"
-                android:text="Review (4.6)"/>
+                android:text="@string/review_4_6"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,7 +177,6 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -209,7 +216,7 @@
                 android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike Air Jordan"
+                android:text="@string/Nike_air_jordan"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"
@@ -219,7 +226,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike shoes flexible for wo.."
+                android:text="@string/Nike_shoes_flexible_for_wo"
                 android:textSize="14sp"
                 android:layout_marginTop="1dp"
                 android:layout_marginStart="10dp"
@@ -232,7 +239,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 1,100 "
+                    android:text="@string/egp_1_100"
                     android:textColor="@color/text"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"
@@ -241,7 +248,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1500 EGP"
+                    android:text="@string/_1_500_egp"
                     android:textColor="@color/text"
                     android:textSize="11sp"
                     android:layout_marginStart="10dp"
@@ -260,7 +267,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="Review (4.5)"/>
+                    android:text="@string/review_4_5"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -272,7 +279,6 @@
                     android:src="@drawable/add"
                     android:layout_marginTop="5dp"
                     android:background="@color/white"
-                    android:layout_gravity="right"
                     android:layout_marginStart="50dp"/>
             </LinearLayout>
 
@@ -304,6 +310,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/three"
                 android:scaleType="centerCrop"
                 android:src="@drawable/productthree" />
 
@@ -311,7 +318,7 @@
                 android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike Air Jordan"
+                android:text="@string/Nike_air_jordan"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"
@@ -321,7 +328,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike shoes flexible for wo.."
+                android:text="@string/Nike_shoes_flexible_for_wo"
                 android:textSize="14sp"
                 android:layout_marginTop="1dp"
                 android:layout_marginStart="10dp"
@@ -335,7 +342,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 1000 "
+                    android:text="@string/egp_1_000"
                     android:textColor="@color/text"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"
@@ -344,7 +351,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1300 EGP"
+                    android:text="@string/_1_300_egp"
                     android:textColor="@color/text"
                     android:textSize="11sp"
                     android:layout_marginStart="10dp"
@@ -365,7 +372,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="Review (4.5)"/>
+                    android:text="@string/review_4_8"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -374,10 +381,10 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/btn"
                     android:src="@drawable/add"
                     android:layout_marginTop="5dp"
                     android:background="@color/white"
-                    android:layout_gravity="right"
                     android:layout_marginStart="50dp"/>
             </LinearLayout>
 
@@ -410,6 +417,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/four"
                     android:scaleType="centerCrop"
                     android:src="@drawable/produtfour" />
 
@@ -417,7 +425,7 @@
                     android:id="@+id/text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nike Air Jordan"
+                    android:text="@string/nike_air_Jordan"
                     android:textSize="14sp"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
@@ -427,7 +435,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nike shoes flexible for wo.."
+                    android:text="@string/nike_shoes_Flexible_for_wo"
                     android:textSize="14sp"
                     android:layout_marginTop="1dp"
                     android:layout_marginStart="10dp"
@@ -440,7 +448,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="EGP 1000 "
+                        android:text="@string/egp_1_500"
                         android:textColor="@color/text"
                         android:textSize="12sp"
                         android:layout_marginStart="10dp"
@@ -449,7 +457,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1500 EGP"
+                        android:text="2,000 EGP"
                         android:textColor="@color/text"
                         android:textSize="11sp"
                         android:layout_marginStart="10dp"
@@ -468,7 +476,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginStart="10dp"
-                        android:text="Review (4.5)"/>
+                        android:text="Review (4.8)"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -528,7 +536,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike shoes flexible for wo.."
+                android:text="@string/nike_Shoes_flexible_for_wo"
                 android:textSize="14sp"
                 android:layout_marginTop="1dp"
                 android:layout_marginStart="10dp"
@@ -541,7 +549,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 1,200 "
+                    android:text="@string/egp_1_800"
                     android:textColor="@color/text"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"
@@ -550,7 +558,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2000 EGP"
+                    android:text="@string/_2_100_egp"
                     android:textColor="@color/text"
                     android:textSize="11sp"
                     android:layout_marginStart="10dp"
@@ -570,19 +578,21 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="Review (4.6)"/>
+                    android:text="@string/review_4_7"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:contentDescription="@string/star"
                     android:src="@drawable/star"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/button"
                     android:src="@drawable/add"
                     android:layout_marginTop="5dp"
                     android:background="@color/white"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:layout_marginStart="50dp"/>
             </LinearLayout>
 
@@ -613,13 +623,14 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/six"
                 android:src="@drawable/product_six" />
 
             <TextView
                 android:id="@+id/text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike Air Jordan"
+                android:text="@string/Nike_air_jordan"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"
@@ -629,7 +640,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike shoes flexible for wo.."
+                android:text="@string/Nike_shoes_flexible_for_wo"
                 android:textSize="14sp"
                 android:layout_marginTop="1dp"
                 android:layout_marginStart="10dp"
@@ -642,7 +653,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 1,100 "
+                    android:text="@string/egp_1_900"
                     android:textColor="@color/text"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"
@@ -651,7 +662,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1500 EGP"
+                    android:text="@string/_2_500_egp"
                     android:textColor="@color/text"
                     android:textSize="11sp"
                     android:layout_marginStart="10dp"
@@ -670,7 +681,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="Review (4.5)"/>
+                    android:text="@string/review_4_4"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -682,7 +693,7 @@
                     android:src="@drawable/add"
                     android:layout_marginTop="5dp"
                     android:background="@color/white"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:layout_marginStart="50dp"/>
             </LinearLayout>
 
